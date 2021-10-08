@@ -5,31 +5,29 @@ body {
   display: flex;
   margin: 0;
 }
-/* #nav {
-  position: absolute;
-} */
 #header {
   width: 100vh;
   position: fixed;
   background: #4c4c4c;
   transform-origin: left top;
   transform: rotate(-90deg) translateX(-100%);
-
   background-color: white;
 }
 h1 {
   text-align: center;
   height: 100%;
   font-size: 7em;
-  color: orange;
+  color: #ff7d33;
 }
 .background-top {
-  background-color: orange;
+  background-color: #ff7d33;
   height: 50vh;
   width: 100vw;
+  display: absolute;
 }
 .background-bottom {
-  background-color: ghostwhite;
+  display: absolute;
+  background-color: #ddd9d9;
   height: 50vh;
   width: 100vw;
 }
