@@ -1,0 +1,35 @@
+html {
+  margin: 0;
+}
+body {
+  display: flex;
+  margin: 0;
+}
+/* #nav {
+  position: absolute;
+} */
+#header {
+  width: 100vh;
+  position: fixed;
+  background: #4c4c4c;
+  transform-origin: left top;
+  transform: rotate(-90deg) translateX(-100%);
+
+  background-color: white;
+}
+h1 {
+  text-align: center;
+  height: 100%;
+  font-size: 7em;
+  color: orange;
+}
+.background-top {
+  background-color: orange;
+  height: 50vh;
+  width: 100vw;
+}
+.background-bottom {
+  background-color: ghostwhite;
+  height: 50vh;
+  width: 100vw;
+}
