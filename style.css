@@ -40,3 +40,14 @@ h1 {
   height: 50vh;
   width: 100vw;
 }
+
+defs,
+#shadow,
+#shadow_Image {
+  pointer-events: none;
+}
+
+g:hover {
+  stroke: black;
+  stroke-width: 3;
+}
