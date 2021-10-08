@@ -100,6 +100,7 @@ h4 {
   position: absolute;
   top: 66vh;
   width: 35em;
+  left: 6vw;
 }
 .block-flex {
   margin-right: 4em;
@@ -107,9 +108,12 @@ h4 {
 p {
   font-weight: 100;
   margin-right: 1em;
+
+  margin-top: 0;
 }
 .flex :first-child {
   font-weight: 600;
+  margin-left: 4em;
 }
 button {
   background-color: #ff7d33;
