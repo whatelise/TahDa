@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,800&display=swap");
+
 html {
   margin: 0;
 }
@@ -14,7 +16,14 @@ body {
   transform: rotate(-90deg) translateX(-100%);
   background-color: white;
 }
+h1,
+h2 {
+  font-family: "Raleway", sans-serif;
+}
+
 h1 {
+  font-weight: 800;
+  font-style: italic;
   text-align: center;
   height: 100%;
   font-size: 7em;
