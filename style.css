@@ -8,6 +8,7 @@ body {
 #header {
   width: 100vh;
   position: fixed;
+  z-index: 99;
   background: #4c4c4c;
   transform-origin: left top;
   transform: rotate(-90deg) translateX(-100%);
@@ -19,15 +20,55 @@ h1 {
   font-size: 7em;
   color: #ff7d33;
 }
+#body {
+  position: absolute;
+}
 .background-top {
   background-color: #ff7d33;
   height: 50vh;
   width: 100vw;
-  display: absolute;
+  position: absolute;
 }
 .background-bottom {
-  display: absolute;
+  position: absolute;
+  top: 50vh;
   background-color: #ddd9d9;
   height: 50vh;
   width: 100vw;
+}
+
+.product-display {
+  position: absolute;
+  display: flex;
+  left: 30vw;
+}
+
+#product-image {
+  top: 0;
+  width: 28em;
+}
+
+.flex {
+  display: flex;
+}
+
+.circle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  width: 14em;
+}
+.circle {
+  background-color: pink;
+  width: 3em;
+  height: 3em;
+  border-radius: 50px;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+}
+
+.right {
+  padding-top: 20%;
+  margin-left: 20%;
 }
