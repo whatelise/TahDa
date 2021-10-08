@@ -17,7 +17,9 @@ body {
   background-color: white;
 }
 h1,
-h2 {
+h2,
+h3,
+p {
   font-family: "Raleway", sans-serif;
 }
 
@@ -26,8 +28,10 @@ h1 {
   font-style: italic;
   text-align: center;
   height: 100%;
-  font-size: 7em;
+  font-size: 10em;
   color: #ff7d33;
+  line-height: 0;
+  letter-spacing: 12px;
 }
 #body {
   position: absolute;
@@ -51,23 +55,30 @@ h1 {
 .product-display {
   position: absolute;
   display: flex;
-  left: 30vw;
+  left: 22vw;
 }
 
 .product-image {
-  top: 0;
-  width: 28em;
+  position: absolute;
+  width: 34em;
+  top: -22vh;
 }
 
 .flex {
   display: flex;
 }
-
+.right {
+  position: absolute;
+  left: 50vw;
+  top: 14vh;
+}
+h4 {
+  margin-top: 2.5em;
+}
 .circle-grid {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
   width: 14em;
 }
 .circle {
@@ -82,4 +93,31 @@ h1 {
 .right {
   padding-top: 20%;
   margin-left: 20%;
+}
+
+#product-info {
+  display: flex;
+  position: absolute;
+  top: 66vh;
+  width: 35em;
+}
+.block-flex {
+  margin-right: 4em;
+}
+p {
+  font-weight: 100;
+  margin-right: 1em;
+}
+.flex :first-child {
+  font-weight: 600;
+}
+button {
+  background-color: #ff7d33;
+  border: 0px;
+  width: 10em;
+  height: 2em;
+  font-size: 22px;
+  border-radius: 25px;
+  margin-top: 3.4em;
+  color: white;
 }
