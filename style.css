@@ -125,3 +125,13 @@ button {
   margin-top: 3.4em;
   color: white;
 }
+
+#shaddow_Image,
+defs {
+  pointer-events: none;
+}
+
+section > svg > g:not(#background) path:hover {
+  stroke: black;
+  stroke-width: 3;
+}
