@@ -83,6 +83,44 @@ h4 {
   width: 14em;
 }
 .circle {
+  width: 3em;
+  height: 3em;
+  border-radius: 50px;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+}
+.c1 {
+  background-color: pink;
+}
+
+.c2 {
+  background-color: #bff4c7;
+}
+
+.c3 {
+  background-color: #98e2f2;
+}
+
+.c4 {
+  background-color: #c8b7fc;
+}
+.c5 {
+  background-color: #fefa9e;
+}
+.c6 {
+  background-color: #d26e80;
+}
+.c6 {
+  background-color: lightgrey;
+}
+.c7 {
+  background-color: #e9a16d;
+}
+.c8 {
+  background-color: #ffd074;
+}
+
+.patch {
   background-color: pink;
   width: 3em;
   height: 3em;
