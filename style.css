@@ -172,3 +172,7 @@ section > svg > g:not(#background) path:hover {
   stroke: black;
   stroke-width: 3;
 }
+
+.chosen {
+  border: 2px solid black;
+}

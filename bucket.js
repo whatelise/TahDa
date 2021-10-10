@@ -58,7 +58,6 @@ function outCap() {
 function toggleOption(event) {
   const target = event.currentTarget;
   const feature = target.dataset.feature;
-  console.log(feature);
 
   // TODO: Toggle feature in "model"
 
@@ -75,14 +74,26 @@ function toggleOption(event) {
   // - find the existing featureElement in #selected ul
   // - create FLIP-animation to animate featureElement to img in target
   // - when animation is complete, remove featureElement from the DOM
+  let selectedFeature = createFeatureElement(feature);
 
-  if (features[feature]) {
+  if (features[feature] === false) {
     // feature added
+    features[feature] = true;
+    target.classList.add("chosen");
+
+    document.querySelector(".product-image").appendChild(selectedFeature);
     console.log(`Feature ${feature} is turned on!`);
 
     // TODO: More code
   } else {
     // feature removed
+    features[feature] = false;
+
+    target.classList.remove("chosen");
+    console.log(selectedFeature);
+    console.log(document.querySelector(".product-image"));
+    // document.querySelector(".product-image").lastElementChild.remove();
+    document.querySelector(".product-image li").removeChild("product-ili);
     console.log(`Feature ${feature} is turned off!`);
 
     // TODO: More code
@@ -95,7 +106,7 @@ function createFeatureElement(feature) {
   li.dataset.feature = feature;
 
   const img = document.createElement("img");
-  img.src = `images/feature_${feature}.png`;
+  img.src = `assets/${feature}.png`;
   img.alt = capitalize(feature);
 
   li.append(img);
