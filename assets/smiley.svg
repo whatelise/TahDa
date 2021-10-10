@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 320 400">
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="39" y="-252" width="260" height="254.8" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="320" height="400" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect x="292" y="65" width="269" height="269" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="panther.psd">
+    <g clip-path="url(#clip-path)">
+      <image id="Layer_1-2" data-name="Layer 1" width="500" height="490" transform="translate(39 -252) scale(0.52)" xlink:href="smiley1.png"/>
+    </g>
+  </g>
+  <g id="smiley.psd">
+    <g clip-path="url(#clip-path-2)">
+      <image id="Layer_1-3" data-name="Layer 1" width="380" height="383" transform="translate(66 101) scale(0.5)" xlink:href="smiley2.png"/>
+    </g>
+  </g>
+  <g id="snail.psd">
+    <g clip-path="url(#clip-path-3)">
+      <image id="Layer_1-4" data-name="Layer 1" width="995" height="705" transform="translate(314.42 119.7) scale(0.22)" xlink:href="smiley3.png"/>
+    </g>
+  </g>
+</svg>

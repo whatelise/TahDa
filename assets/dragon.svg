@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="250" height="250" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="iron-on-patch-dragon-medium.psd">
+    <g clip-path="url(#clip-path)">
+      <image id="Layer_1-2" data-name="Layer 1" width="170" height="248" transform="translate(38)" xlink:href="dragon1.png"/>
+    </g>
+  </g>
+</svg>
