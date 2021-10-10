@@ -88,12 +88,9 @@ function toggleOption(event) {
   } else {
     // feature removed
     features[feature] = false;
-
+    console.log(feature);
     target.classList.remove("chosen");
-    console.log(selectedFeature);
-    console.log(document.querySelector(".product-image"));
-    // document.querySelector(".product-image").lastElementChild.remove();
-    document.querySelector(".product-image li").removeChild("product-ili);
+    document.querySelector(`[data-feature="${feature}"]`).remove();
     console.log(`Feature ${feature} is turned off!`);
 
     // TODO: More code
