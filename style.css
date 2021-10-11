@@ -13,10 +13,11 @@
 h1 {
   font-weight: 800;
   font-style: italic;
-  font-size: 10em;
+  font-size: 22vh;
   color: #ff7d33;
   letter-spacing: 1vw;
-  line-height: 1;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
