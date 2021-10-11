@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,800&display=swap");
 
-html {
-  margin: 0;
-}
-body {
-  display: flex;
-  margin: 0;
-}
 #header {
   width: 100vh;
   position: fixed;
@@ -38,8 +31,6 @@ p {
   font-family: "Raleway", sans-serif;
 }
 
-#body {
-}
 .background-top {
   position: absolute;
   background-color: #ff7d33;
@@ -59,10 +50,9 @@ p {
 
 .product-display {
   position: relative;
-  margin-top: 1em;
   margin-left: 15vw;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-column-gap: 5vw;
 }
 
