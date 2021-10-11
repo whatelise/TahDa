@@ -51,7 +51,6 @@ function storeValue() {
 }
 
 function hoverCap() {
-  console.log(this);
   this.style.filter = "brightness(110%)";
 }
 
@@ -94,7 +93,6 @@ function toggleOption(event) {
   } else {
     // feature removed
     features[feature] = false;
-    console.log(feature);
     target.classList.remove("chosen");
     document.querySelector(`[data-feature="${feature}"]`).remove();
     console.log(`Feature ${feature} is turned off!`);

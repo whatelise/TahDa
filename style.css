@@ -21,16 +21,23 @@ body {
 h1 {
   font-weight: 800;
   font-style: italic;
-  font-size: 22vh;
+  font-size: 10vw;
   color: #ff7d33;
   letter-spacing: 1vw;
   margin: 0;
-  padding: 0;
+  padding: 0.16em;
 }
 
 h2 {
+  font-size: 2.2em;
   margin-top: 1em;
-  margin-left: 5em;
+  margin-left: 1em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 400;
 }
 
 h1,
@@ -60,11 +67,12 @@ p {
 
 .product-display {
   position: relative;
-  margin-left: 15vw;
+  margin-left: 18vw;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 5vw;
   height: 100vh;
+  align-items: center;
 }
 
 .product-display ul {
@@ -103,16 +111,15 @@ figure {
 }
 
 h4 {
+  margin-left: 6vw;
+  margin-right: 6vw;
   margin-top: 5em;
 }
 .circle-grid {
-  display: -webkit-flex;
-  display: -moz-box;
-  display: flex;
-
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 50%;
+  display: grid;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .circle {
   width: 3em;
@@ -173,6 +180,7 @@ h4 {
 .block-flex {
   margin-right: 4em;
 }
+
 p {
   font-weight: 100;
   margin-right: 1em;
@@ -183,11 +191,12 @@ p {
   margin-left: 4em;
 }
 button {
+  margin-left: 6vw;
   background-color: #ff7d33;
   border: 0px;
-  width: 10em;
-  height: 2em;
-  font-size: 22px;
+  width: 50%;
+  height: 2.2em;
+  font-size: 1.2em;
   border-radius: 25px;
   margin-top: 3.4em;
   color: white;
