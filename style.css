@@ -16,13 +16,6 @@ body {
   transform: rotate(-90deg) translateX(-100%);
   background-color: white;
 }
-h1,
-h2,
-h3,
-h4,
-p {
-  font-family: "Raleway", sans-serif;
-}
 
 h1 {
   font-weight: 800;
@@ -34,14 +27,23 @@ h1 {
   line-height: 0;
   letter-spacing: 1vw;
 }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: "Raleway", sans-serif;
+}
+
 #body {
-  position: absolute;
 }
 .background-top {
+  position: absolute;
   background-color: #ff7d33;
   height: 50vh;
   width: 100vw;
-  position: absolute;
+
   z-index: -1;
 }
 .background-bottom {
@@ -54,22 +56,23 @@ h1 {
 }
 
 .product-display {
-  position: absolute;
   display: flex;
   left: 22vw;
 }
 
 .product-image {
-  position: absolute;
+  position: relative;
   width: 34em;
   /* top: -22vh; */
+}
+
+.patch-container {
 }
 
 .flex {
   display: flex;
 }
 .right {
-  position: absolute;
   left: 50vw;
   top: 14vh;
 }
@@ -135,7 +138,7 @@ h4 {
 
 #product-info {
   display: flex;
-  position: absolute;
+
   top: 66vh;
   width: 34vw;
   left: 6vw;

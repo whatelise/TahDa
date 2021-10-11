@@ -20,6 +20,9 @@ async function start() {
   let response = await fetch("hat.svg");
   let mySvgData = await response.text();
   document.querySelector(".product-image").innerHTML = mySvgData;
+  const newDiv = document.createElement("ul");
+  newDiv.classList.add("patch-container");
+  document.querySelector(".product-image").appendChild(newDiv);
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
   startManipulatingTheSvg();
 }
@@ -81,7 +84,7 @@ function toggleOption(event) {
     features[feature] = true;
     target.classList.add("chosen");
 
-    document.querySelector(".product-image").appendChild(selectedFeature);
+    document.querySelector(".patch-container").appendChild(selectedFeature);
     console.log(`Feature ${feature} is turned on!`);
 
     // TODO: More code
