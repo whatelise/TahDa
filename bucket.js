@@ -19,9 +19,12 @@ document.addEventListener("DOMContentLoaded", start);
 async function start() {
   let response = await fetch("hat.svg");
   let mySvgData = await response.text();
+  let response2 = await fetch("hat-curve.svg");
+  let mySvgData2 = await response2.text();
   document.querySelector(".product-image").innerHTML = mySvgData;
   const newDiv = document.createElement("ul");
   newDiv.classList.add("patch-container");
+  /*  const hatCurve = document.querySelector(); */
   document.querySelector(".product-image").appendChild(newDiv);
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
   startManipulatingTheSvg();
