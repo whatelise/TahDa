@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1104.31 269.66">
-  <g id="shaddow_Image" data-name="shaddow Image">
-    <path d="M62.06,122c114.66,38.41,286,68.3,495.88,69.71C746.09,193,921.56,163,1031.21,131.2" fill="none" stroke="#000" stroke-miterlimit="10"/>
+  <g id="theCurve" data-name="theCurve">
+    <path d="M62.06,122c114.66,38.41,286,68.3,495.88,69.71C746.09,193,921.56,163,1031.21,131.2" fill="none" stroke="black" stroke-miterlimit="10"/>
   </g>
 </svg>

@@ -19,16 +19,22 @@ document.addEventListener("DOMContentLoaded", start);
 async function start() {
   let response = await fetch("hat.svg");
   let mySvgData = await response.text();
-  let response2 = await fetch("assets/hat-curve.svg");
-  let mySvgData2 = await response2.text();
   document.querySelector(".product-image").innerHTML = mySvgData;
   const newDiv = document.createElement("ul");
   newDiv.classList.add("patch-container");
-  /*  const hatCurve = document.querySelector(); */
   document.querySelector(".product-image").appendChild(newDiv);
+  //svg curve data//
+  let response2 = await fetch("assets/hat-curve.svg");
+  const hatCurve = await response2.text();
+  document.querySelector("#curvesvg").innerHTML = hatCurve;
+
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+
   startManipulatingTheSvg();
 }
+
+let patch = null;
+let curve = null;
 
 function startManipulatingTheSvg() {
   const clickElm = document.querySelectorAll(".g_interact");
@@ -86,8 +92,10 @@ function toggleOption(event) {
     features[feature] = true;
     target.classList.add("chosen");
 
-    document.querySelector(".patch-container").appendChild(selectedFeature);
-    console.log(`Feature ${feature} is turned on!`);
+    patch = document.querySelector(".patch-container").appendChild(selectedFeature);
+    //curve//
+    curve = document.querySelector("#theCurve").getAttribute("d");
+    patch.style.offsetPath = `path("${curve}")`;
 
     // TODO: More code
   } else {
