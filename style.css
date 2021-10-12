@@ -39,6 +39,17 @@ h3 {
   font-size: 2em;
   font-weight: 400;
 }
+h4 {
+  margin-left: 6vw;
+  margin-right: 6vw;
+  margin-top: 5em;
+}
+
+p {
+  font-size: 0.8em;
+  margin-top: 1em;
+  margin-left: 1em;
+}
 
 h1,
 h2,
@@ -83,6 +94,7 @@ p {
   transform: translate(-51%, -50%);
   text-decoration: none;
   list-style: none;
+  pointer-events: none;
 }
 
 .patch-container img {
@@ -119,16 +131,12 @@ figure {
   display: flex;
 }
 
-h4 {
-  margin-left: 6vw;
-  margin-right: 6vw;
-  margin-top: 5em;
-}
 .circle-grid {
   display: grid;
   margin-left: 6vw;
   margin-right: 6vw;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
 }
 .circle {
   width: 3em;
@@ -169,7 +177,7 @@ h4 {
 }
 
 .patch {
-  width: 3em;
+  width: auto;
   height: 3em;
   border-radius: 50px;
   margin-right: 0.5em;
@@ -184,17 +192,19 @@ h4 {
 
 #product-info {
   display: flex;
+  justify-content: space-between;
+  margin-right: 10vw;
 }
 
 .block-flex {
-  margin-right: 4em;
+  margin-right: 10vw;
 }
 
 p {
   font-weight: 100;
-  margin-right: 1em;
   margin-top: 0;
 }
+
 .flex :first-child {
   font-weight: 600;
   margin-left: 4em;
@@ -222,5 +232,5 @@ section > svg > g:not(#background) path:hover {
 }
 
 .chosen {
-  border: 2px solid black;
+  filter: opacity(30%);
 }
