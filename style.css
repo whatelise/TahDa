@@ -78,18 +78,27 @@ p {
 .product-display ul {
   position: absolute;
   display: flex;
-  justify-content: space-between;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 51%;
+  transform: translate(-51%, -50%);
   text-decoration: none;
   list-style: none;
 }
 
 .patch-container img {
-  margin: 1vw;
+  margin: 1.2vw;
   height: 6vw;
   width: auto;
+}
+
+/* Get 1st patch */
+.patch-container > .perspective:first-child {
+  transform: perspective(10vw) rotateY(-10deg) rotate(4deg) translateY(-1vw);
+}
+
+/* Get 3rd patch */
+.patch-container > .perspective:last-child {
+  transform: perspective(10vw) rotateY(10deg) rotate(-4deg) translateY(-1vw);
 }
 
 .product-image {

@@ -80,14 +80,24 @@ function toggleOption(event) {
   // - create FLIP-animation to animate featureElement to img in target
   // - when animation is complete, remove featureElement from the DOM
   let selectedFeature = createFeatureElement(feature);
-
+  let patchCount = document.querySelector(".patch-container").childElementCount;
   if (features[feature] === false) {
     // feature added
-    features[feature] = true;
-    target.classList.add("chosen");
+    if (patchCount < 3) {
+      features[feature] = true;
+      target.classList.add("chosen");
 
-    document.querySelector(".patch-container").appendChild(selectedFeature);
-    console.log(`Feature ${feature} is turned on!`);
+      document.querySelector(".patch-container").appendChild(selectedFeature);
+      console.log(`Feature ${feature} is turned on!`);
+      console.log("patchcount " + patchCount);
+    } else {
+      alert("you can only have 3 patches xoxo");
+    }
+    if (patchCount === 2) {
+      document.querySelectorAll(".patch-container li").forEach((patchSvg) => {
+        patchSvg.classList.add("perspective");
+      });
+    }
 
     // TODO: More code
   } else {
@@ -97,8 +107,11 @@ function toggleOption(event) {
     document.querySelector(`[data-feature="${feature}"]`).remove();
     console.log(`Feature ${feature} is turned off!`);
 
-    // TODO: More code
+    document.querySelectorAll(".perspective").forEach((patchSvg) => {
+      patchSvg.classList.remove("perspective");
+    });
   }
+  // TODO: More code
 }
 
 // Create featureElement to be appended to #selected ul - could have used a <template> instead
