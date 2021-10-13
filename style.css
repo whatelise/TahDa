@@ -71,7 +71,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+.popup {
   font-family: "Raleway", sans-serif;
 }
 
@@ -265,4 +266,33 @@ section > svg > g:not(#background) path:hover {
 
 .chosen {
   filter: opacity(30%);
+}
+
+.popup {
+  width: 22vw;
+  background-color: lightgray;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0;
+  border: black solid 4px;
+  border-radius: 20px;
+  position: absolute;
+  top: 10%;
+  left: 53%;
+  transform: translate(50%, 50%);
+  box-shadow: 1px 1px;
+  z-index: 99;
+}
+
+.popupbutton {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
 }

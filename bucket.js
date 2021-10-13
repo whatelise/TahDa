@@ -47,6 +47,11 @@ function startManipulatingTheSvg() {
   //hover
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseover", hoverCap));
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
+
+  //popup button
+  document.querySelector(".popupbutton").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("hidden");
+  });
 }
 function choseColor() {
   //get color
@@ -112,7 +117,7 @@ function toggleOption(event) {
       console.log(`Feature ${feature} is turned on!`);
       console.log("patchcount " + patchCount);
     } else {
-      alert("you can only have 3 patches xoxo");
+      document.querySelector(".popup").classList.remove("hidden");
     }
     if (patchCount === 2) {
       document.querySelectorAll(".patch-container li").forEach((patchSvg) => {
