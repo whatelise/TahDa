@@ -28,6 +28,15 @@ async function start() {
   document.querySelector(".product-image").appendChild(newDiv);
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
   startManipulatingTheSvg();
+
+  //fetch cursor
+  fetch("assets/color-dot.svg")
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (data) {
+      document.querySelector("#cursor").innerHTML = data;
+    });
 }
 
 function startManipulatingTheSvg() {
@@ -40,14 +49,26 @@ function startManipulatingTheSvg() {
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
 }
 function choseColor() {
+  //get color
   selectedColor = getComputedStyle(this).backgroundColor;
   console.log(selectedColor);
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseover", hoverCap));
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
+
+  //cursor
+  document.querySelector("body").addEventListener("mousemove", cursorPosition);
+  const svgFill = document.querySelector("#pointer");
+  document.querySelector("body").classList.add("no-cursor");
+  document.querySelectorAll(".pointer").forEach((pointer) => {
+    pointer.setAttribute("fill", selectedColor);
+    console.log("fill is running");
+    console.log(pointer);
+  });
 }
 
 function storeValue() {
   this.style.fill = selectedColor;
+  console.log("selected color" + selectedColor);
 }
 
 function hoverCap() {
@@ -130,4 +151,11 @@ function createFeatureElement(feature) {
 
 function capitalize(text) {
   return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
+}
+
+function cursorPosition(e) {
+  const cursor = document.querySelector("#cursor");
+  cursor.style.display = `block`;
+  cursor.style.left = `${e.pageX}px`;
+  cursor.style.top = `${e.pageY}px`;
 }
