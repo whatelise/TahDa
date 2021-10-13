@@ -77,12 +77,11 @@ p {
 
 .product-display ul {
   position: absolute;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
   /* top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
-  text-decoration: none;
   list-style: none;
 }
 
@@ -213,5 +212,5 @@ section > svg > g:not(#background) path:hover {
 }
 
 .chosen {
-  border: 2px solid black;
+  opacity: 50%;
 }

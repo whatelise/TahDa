@@ -92,10 +92,12 @@ function toggleOption(event) {
     features[feature] = true;
     target.classList.add("chosen");
 
-    patch = document.querySelector(".patch-container").appendChild(selectedFeature);
+    patch = document.querySelector(".patch-container");
     //curve//
     curve = document.querySelector("#theCurve").getAttribute("d");
     patch.style.offsetPath = `path("${curve}")`;
+
+    patch.appendChild(selectedFeature);
 
     // TODO: More code
   } else {
