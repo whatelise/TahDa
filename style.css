@@ -89,17 +89,23 @@ p {
   position: absolute;
   display: flex;
   top: 50%;
-  left: 51%;
-  transform: translate(-51%, -50%);
-  text-decoration: none;
+  left: 50%;
+  transform: translate(-50%, -50%);
   list-style: none;
   pointer-events: none;
+  padding: 0;
+  padding-bottom: 4vw;
+}
+
+li {
+  height: 6vw;
+  margin: 0.8vw;
 }
 
 .patch-container img {
   margin: 1.2vw;
-  height: 6vw;
-  width: auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 /* Get 1st patch */
@@ -179,19 +185,19 @@ figure {
   width: auto;
   height: 3em;
   border-radius: 50px;
-  margin-right: 0.5em;
-  margin-top: 0.5em;
+  margin-right: 1vw;
+  margin-top: 1vw;
 }
 
 [data-feature="dragon"],
 [data-feature="money"] {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 [data-feature="snail"] {
-  margin-left: -0.5em;
-  margin-right: -0.5em;
+  margin-left: -1vw;
+  margin-right: -1vw;
 }
 
 .right {
