@@ -48,7 +48,6 @@ h4 {
 p {
   font-size: 0.8em;
   margin-top: 1em;
-  margin-left: 1em;
 }
 
 h1,
@@ -105,12 +104,12 @@ p {
 
 /* Get 1st patch */
 .patch-container > .perspective:first-child {
-  transform: perspective(10vw) rotateY(-10deg) rotate(4deg) translateY(-1vw);
+  transform: rotate(6deg) perspective(15vw) rotateY(-16deg) translateY(-1vw);
 }
 
 /* Get 3rd patch */
 .patch-container > .perspective:last-child {
-  transform: perspective(10vw) rotateY(10deg) rotate(-4deg) translateY(-1vw);
+  transform: rotate(-6deg) perspective(15vw) rotateY(16deg) translateY(-1vw);
 }
 
 .product-image {
@@ -184,6 +183,17 @@ figure {
   margin-top: 0.5em;
 }
 
+[data-feature="dragon"],
+[data-feature="money"] {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+[data-feature="snail"] {
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+}
+
 .right {
   display: flex;
   flex-direction: column;
@@ -209,6 +219,10 @@ p {
   font-weight: 600;
   margin-left: 4em;
 }
+.flex :last-child {
+  margin-left: 0.5em;
+}
+
 button {
   margin-left: 6vw;
   background-color: #ff7d33;
