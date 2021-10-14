@@ -55,19 +55,17 @@ function startManipulatingTheSvg() {
 }
 function choseColor() {
   //get color
+  document.querySelectorAll(".circle").forEach((el) => el.classList.remove("chosen-color"));
   selectedColor = getComputedStyle(this).backgroundColor;
-  console.log(selectedColor);
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseover", hoverCap));
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
-  this.style.outline = "2px solid black";
+  this.classList.add("chosen-color");
   //cursor
   document.querySelector("body").addEventListener("mousemove", cursorPosition);
   const svgFill = document.querySelector("#pointer");
   document.querySelector("body").classList.add("no-cursor");
   document.querySelectorAll(".pointer").forEach((pointer) => {
     pointer.setAttribute("fill", selectedColor);
-    console.log("fill is running");
-    console.log(pointer);
   });
 }
 
@@ -77,7 +75,8 @@ function storeValue() {
 }
 
 function hoverCap() {
-  this.style.filter = "brightness(110%)";
+  this.style.filter = "brightness(114%)";
+  this.style.transition = "all 0.8s cubic-bezier(0.19, 1, 0.22, 1)";
 }
 
 function outCap() {
@@ -89,26 +88,10 @@ function outCap() {
 function toggleOption(event) {
   const target = event.currentTarget;
   const feature = target.dataset.feature;
-
-  // TODO: Toggle feature in "model"
-
-  // If feature is (now) turned on:
-  // - mark target as chosen (add class "chosen")
-  // - un-hide the feature-layer(s) in the #product-preview;
-  // - create featureElement and append to #selected ul
-  // - create FLIP-animation to animate featureElement from img in target, to
-  //   its intended position. Do it with normal animation or transition class!
-
-  // Else - if the feature (became) turned off:
-  // - no longer mark target as chosen
-  // - hide the feature-layer(s) in the #product-preview
-  // - find the existing featureElement in #selected ul
-  // - create FLIP-animation to animate featureElement to img in target
-  // - when animation is complete, remove featureElement from the DOM
   let selectedFeature = createFeatureElement(feature);
   let patchCount = document.querySelector(".patch-container").childElementCount;
   if (features[feature] === false) {
-    // feature added
+    // Add feature
     if (patchCount < 3) {
       features[feature] = true;
       target.classList.add("chosen");
@@ -124,10 +107,8 @@ function toggleOption(event) {
         patchSvg.classList.add("perspective");
       });
     }
-
-    // TODO: More code
   } else {
-    // feature removed
+    // Remove feature
     features[feature] = false;
     target.classList.remove("chosen");
     document.querySelector(`[data-feature="${feature}"]`).remove();
@@ -137,10 +118,8 @@ function toggleOption(event) {
       patchSvg.classList.remove("perspective");
     });
   }
-  // TODO: More code
 }
 
-// Create featureElement to be appended to #selected ul - could have used a <template> instead
 function createFeatureElement(feature) {
   const li = document.createElement("li");
   li.dataset.feature = feature;

@@ -259,6 +259,7 @@ button {
 }
 button:hover {
   background-color: rgb(4, 4, 36);
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #shaddow_Image,
@@ -273,6 +274,10 @@ section > svg > g:not(#background) path:hover {
 
 .chosen {
   filter: opacity(30%);
+}
+
+.chosen-color {
+  border: rgb(255, 255, 255) 3px solid;
 }
 
 .popup {
