@@ -59,7 +59,7 @@ function choseColor() {
   console.log(selectedColor);
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseover", hoverCap));
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
-
+  this.style.outline = "2px solid black";
   //cursor
   document.querySelector("body").addEventListener("mousemove", cursorPosition);
   const svgFill = document.querySelector("#pointer");

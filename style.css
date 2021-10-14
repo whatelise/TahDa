@@ -257,6 +257,9 @@ button {
   margin-top: 3.4em;
   color: white;
 }
+button:hover {
+  background-color: rgb(4, 4, 36);
+}
 
 #shaddow_Image,
 defs {
