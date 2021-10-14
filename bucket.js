@@ -3,6 +3,14 @@
 let elementToPaint;
 let selectedColor;
 
+let allHats = [];
+
+let chosenColor = {
+  top: "",
+  rim: "",
+  bottom: "",
+};
+
 const features = {
   dragon: false,
   smiley: false,
@@ -19,14 +27,16 @@ document.addEventListener("DOMContentLoaded", start);
 async function start() {
   let response = await fetch("hat.svg");
   let mySvgData = await response.text();
-  let response2 = await fetch("assets/hat-curve.svg");
-  let mySvgData2 = await response2.text();
-  document.querySelector(".product-image").innerHTML = mySvgData;
+  const clone = document.querySelector("template").content.cloneNode(true);
+  clone.querySelector(".product-div").innerHTML = mySvgData;
   const newDiv = document.createElement("ul");
   newDiv.classList.add("patch-container");
   /*  const hatCurve = document.querySelector(); */
-  document.querySelector(".product-image").appendChild(newDiv);
-  document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+  clone.querySelector(".product-div").appendChild(newDiv);
+  clone.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+  const clickElm = clone.querySelectorAll(".g_interact");
+  clickElm.forEach((el) => (el.style.fill = "lightgray"));
+  clickElm.forEach((el) => el.addEventListener("click", storeColor));
   startManipulatingTheSvg();
 
   //fetch cursor
@@ -37,26 +47,33 @@ async function start() {
     .then(function (data) {
       document.querySelector("#cursor").innerHTML = data;
     });
+
+  document.querySelector(".product-image").appendChild(clone);
 }
 
 function startManipulatingTheSvg() {
-  const clickElm = document.querySelectorAll(".g_interact");
-  clickElm.forEach((el) => (el.style.fill = "lightgray"));
-  clickElm.forEach((el) => el.addEventListener("click", storeValue));
   document.querySelectorAll(".circle").forEach((el) => el.addEventListener("click", choseColor));
+  setUpButtons();
+}
+
+function setUpButtons() {
   //hover
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseover", hoverCap));
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
-
   //popup button
   document.querySelector(".popupbutton").addEventListener("click", () => {
     document.querySelector(".popup").classList.add("hidden");
   });
+  //save selection
+  document.querySelector("#save").addEventListener("click", saveSelection);
 }
+
 function choseColor() {
   //get color
   selectedColor = getComputedStyle(this).backgroundColor;
   console.log(selectedColor);
+
+  //highligh hovered element
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseover", hoverCap));
   document.querySelectorAll("path").forEach((el) => el.addEventListener("mouseout", outCap));
 
@@ -71,9 +88,54 @@ function choseColor() {
   });
 }
 
-function storeValue() {
+function storeColor() {
   this.style.fill = selectedColor;
-  console.log("selected color" + selectedColor);
+  elementToPaint = this.getAttribute("id");
+  chosenColor[elementToPaint] = selectedColor;
+}
+
+function saveSelection() {
+  createPartsObject();
+  localStorage.setItem("chosenColor", JSON.stringify(chosenColor));
+  const localStorageObject = localStorage.getItem("chosenColor");
+  console.log(JSON.parse(localStorageObject));
+  allHats.push(localStorageObject);
+  console.log("allHats " + allHats);
+  document.querySelector("#save").removeEventListener("click", saveSelection);
+  displaySelection();
+  setUpButtons();
+}
+
+function createPartsObject() {
+  const activeParts = document.querySelectorAll(".patch-container li");
+  activeParts.forEach((activepart) => {
+    const partID = activepart.dataset.feature;
+    features[partID] = true;
+    chosenColor[partID] = true;
+    allHats.push(chosenColor[features]);
+  });
+}
+
+function displaySelection() {
+  //fetch bucket cursor
+  fetch("assets/bucket-cursor.svg")
+    .then(function (res) {
+      return res.text();
+    })
+    .then(function (data) {
+      document.querySelector("#cursor").innerHTML = data;
+    });
+  const clone = document.querySelector("#header").content.cloneNode(true);
+  clone.querySelector(".product-div").innerHTML = mySvgData;
+  const newDiv = document.createElement("ul");
+  newDiv.classList.add("patch-container");
+  /*  const hatCurve = document.querySelector(); */
+  clone.querySelector(".product-div").appendChild(newDiv);
+  clone.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+  const clickElm = clone.querySelectorAll(".g_interact");
+  clickElm.forEach((el) => (el.style.fill = "lightgray"));
+  clickElm.forEach((el) => el.addEventListener("click", storeColor));
+  startManipulatingTheSvg();
 }
 
 function hoverCap() {
@@ -89,6 +151,8 @@ function outCap() {
 function toggleOption(event) {
   const target = event.currentTarget;
   const feature = target.dataset.feature;
+
+  //apply feature to dom
 
   // TODO: Toggle feature in "model"
 
@@ -112,7 +176,6 @@ function toggleOption(event) {
     if (patchCount < 3) {
       features[feature] = true;
       target.classList.add("chosen");
-
       document.querySelector(".patch-container").appendChild(selectedFeature);
       console.log(`Feature ${feature} is turned on!`);
       console.log("patchcount " + patchCount);
