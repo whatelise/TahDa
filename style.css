@@ -12,6 +12,19 @@ body {
 .no-cursor {
   cursor: none;
 }
+.mouse_move {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mouse_move img {
+  position: absolute;
+}
 
 #cursor {
   position: absolute;
@@ -167,6 +180,12 @@ figure {
   margin-right: 0.5em;
   margin-top: 0.5em;
 }
+
+.circle:hover,
+.patch:hover {
+  filter: opacity(0.8);
+}
+
 .c1 {
   background-color: rgb(255, 125, 147);
 }

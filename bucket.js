@@ -37,6 +37,8 @@ async function start() {
     .then(function (data) {
       document.querySelector("#cursor").innerHTML = data;
     });
+
+  mouseMove();
 }
 
 function startManipulatingTheSvg() {
@@ -142,4 +144,17 @@ function cursorPosition(e) {
   cursor.style.display = `block`;
   cursor.style.left = `${e.pageX}px`;
   cursor.style.top = `${e.pageY}px`;
+}
+
+function mouseMove() {
+  document.addEventListener("mousemove", parallax);
+  function parallax(event) {
+    this.querySelectorAll(".mouse").forEach((shift) => {
+      const position = shift.getAttribute("value");
+      const x = (window.innerWidth - event.pageX * position) / 400;
+      const y = (window.innerHeight - event.pageY * position) / 400;
+
+      shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+  }
 }
